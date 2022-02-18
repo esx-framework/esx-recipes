@@ -1,7 +1,7 @@
 $engine: 3
 $onesync: legacy
 name: ESX Legacy
-version: 0.2.2
+version: 0.2.3
 author: ESX Framework
 description: A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. 
 
