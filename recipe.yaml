@@ -67,15 +67,15 @@ tasks:
     file: ./tmp/esx/[SQL]/legacy.sql
 
   - action: download_file
-    path: ./tmp/files/oxmysql-1.9.3.zip
-    url: https://github.com/overextended/oxmysql/releases/download/v1.9.3/oxmysql-v1.9.3.zip
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
-    dest: ./resources/[standalone]
-    src: ./tmp/files/oxmysql-1.9.3.zip
+    dest: ./resources/[esx]
+    src: ./tmp/files/oxmysql.zip
     
   - action: download_file
     path: ./tmp/files/npwd.zip
-    url: https://github.com/project-error/npwd/releases/download/1.1.6/npwd.zip
+    url: https://github.com/project-error/npwd/releases/latest/download/npwd.zip
   - action: unzip
     dest: ./resources/[standalone]
     src: ./tmp/files/npwd.zip
