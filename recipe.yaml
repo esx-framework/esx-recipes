@@ -71,9 +71,29 @@ tasks:
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
-    dest: ./resources/[standalone]
+    dest: ./resources/oxmysql
     src: ./tmp/files/oxmysql.zip
     
+  - action: download_file
+    path: ./tmp/files/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_lib.zip
+
+  - action: download_file
+    path: ./tmp/files/ox_inventory.zip
+    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_inventory.zip
+
+  - action: download_file
+    path: ./tmp/files/ox_fuel.zip
+    url: https://github.com/overextended/ox_fuel/releases/latest/download/ox_fuel.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_fuel.zip
   ## Patching configs: HUD 
   - action: replace_string
     file: ./resources/[esx_addons]/esx_status/config.lua
