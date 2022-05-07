@@ -117,7 +117,7 @@ tasks:
     file: ./tmp/esx/[SQL]/legacy.sql
 
   - action: query_database
-    file: .resources/[ox]/ox_inventory/setup/instal.sql
+    file: .resources/[ox]/ox_inventory/setup/install.sql
 
   ## Cleanup
   - action: remove_path
