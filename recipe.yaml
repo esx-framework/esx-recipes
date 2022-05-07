@@ -1,7 +1,7 @@
 $engine: 3
 $onesync: legacy
 name: ESX Legacy
-version: 0.2.3
+version: 0.3.4
 author: ESX Framework
 description: A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. 
 
@@ -29,10 +29,12 @@ tasks:
   
   # Download basic resources and ESX dependencies
 
+  - action: connect_database
+  
   - action: download_github
     src: https://github.com/Bob74/bob74_ipl
     ref: master
-    dest: ./resources/bob74_ipl
+    dest: ./resources/[standalone]/bob74_ipl
 
   - action: download_github
     src: https://github.com/esx-framework/esx-legacy
@@ -58,11 +60,10 @@ tasks:
     dest: ./resources/[hud]/ev-hud
 
   - action: download_github
-    src: https://github.com/AvarianKnight/rp-radio
-    ref: master
-    dest: ./resources/rp-radio
+    src: https://github.com/Benzo00/esx-radio
+    ref: main
+    dest: ./resources/[esx_addons]/esx-radio
 
-  - action: connect_database
   - action: query_database
     file: ./tmp/esx/[SQL]/legacy.sql
 
@@ -70,35 +71,10 @@ tasks:
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
-    dest: ./resources/[esx]
+    dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
     
-  - action: download_file
-    path: ./tmp/files/npwd.zip
-    url: https://github.com/project-error/npwd/releases/latest/download/npwd.zip
-  - action: unzip
-    dest: ./resources/[standalone]
-    src: ./tmp/files/npwd.zip
-
-  - action: query_database
-    file: ./resources/[standalone]/npwd/import.sql
-
-  - action: download_github
-    src: https://github.com/overextended/esx-npwd
-    ref: main
-    dest: ./resources/[esx_addons]/esx-npwd
-
-  - action: download_github
-    src: https://github.com/citizenfx/screenshot-basic
-    ref: master
-    dest: ./resources/[standalone]/screenshot-basic
-    
   ## Patching configs: HUD 
-  - action: replace_string
-    file: ./resources/[esx]/es_extended/config.lua
-    search: 'Config.EnableHud            	= true'
-    replace: 'Config.EnableHud            	= false'
-
   - action: replace_string
     file: ./resources/[esx_addons]/esx_status/config.lua
     search: 'Config.Display        = true'
@@ -109,32 +85,16 @@ tasks:
     search: 'Config.useFramework = false // Set to true to use ESX, VRP or QBCore'
     replace: 'Config.useFramework = true // Set to true to use ESX, VRP or QBCore'
   
-  ## Patching configs: rp-radio
+  ## Patching configs: esx-radio
   - action: replace_string
-    file: ./resources/rp-radio/config.lua
-    search: |
-      Name = "INPUT_REPLAY_START_STOP_RECORDING_SECONDARY", -- Control name"
-    replace: | 
-      Name = "INPUT_SELECT_CHARACTER_MICHAEL", -- Control name"
-  - action: replace_string
-    file: ./resources/rp-radio/config.lua
-    search: 'Key = 289, -- F2'
-    replace: 'Key = 166, -- F5'
+    file: ./resources/][esx_addons]/esx-radio/config.lua
+    search: 'Key = "UP"'
+    replace: 'Key = "F5"'
 
   - action: replace_string
     mode: all_vars
     file: 
     - ./resources/loadingscreen/config.js
-
-  ## Patching configs: NPWD
-  - action: replace_string
-    file: ./resources/[standalone]/npwd/config.json
-    search: '"useResourceIntegration": false,'
-    replace: '"useResourceIntegration": true,'
-  - action: replace_string
-    file: ./resources/[standalone]/npwd/config.json
-    search: '"toggleKey": "f1"'
-    replace: '"toggleKey": "f4"'
 
   ## Cleanup
   - action: remove_path

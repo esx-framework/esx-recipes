@@ -1,6 +1,6 @@
-<h1 align='center'>ESX Legacy Recipe</a></h1><p align='center'><b><a href='https://discord.gg/cNx6HF9P5J'>Discord</a> - <a href='https://esx-framework.org/'>Website</a> - <a href='https://docs.esx-framework.org/legacy/installation'>Documentation</a></b></h5>
+<h1 align='center'>ESX Legacy Recipe</a></h1><p align='center'><b><a href='https://discord.esx-framework.org/'>Discord</a> - <a href='https://esx-framework.org/'>Website</a> - <a href='https://docs.esx-framework.org/legacy/installation'>Documentation</a></b></h5>
 
-##### ESX is the leading framework for creating roleplay servers on FiveM, with many official and community resources designed to utilise the tools provided here. For a taste of what's available
+##### ESX is the industry leading framework for creating servers on FiveM, with many official and community resources designed to utilise the tools provided here. For a taste of what's available
 
 > esx_identity: Enables character registration defining a players name, sex, height, and date of birth
 > esx_society: Allows job resources to register a society, gaining employee management, society funds, and more
