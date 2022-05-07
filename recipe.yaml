@@ -64,9 +64,6 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/esx-radio
 
-  - action: query_database
-    file: ./tmp/esx/[SQL]/legacy.sql
-
   - action: download_file
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
@@ -114,6 +111,13 @@ tasks:
     mode: all_vars
     file: 
     - ./resources/loadingscreen/config.js
+
+  ## Query Database
+  - action: query_database
+    file: ./tmp/esx/[SQL]/legacy.sql
+
+  - action: query_database
+    file: .resources/[ox]/ox_inventory/setup/instal.sql
 
   ## Cleanup
   - action: remove_path
