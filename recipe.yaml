@@ -88,6 +88,9 @@ tasks:
     dest: ./resources/[ox]
     src: ./tmp/files/ox_inventory.zip
 
+  - action: query_database
+    file: ./resources/[ox]/ox_inventory/setup/install.sql
+
   - action: download_github
     src: https://github.com/overextended/ox_fuel
     ref: main
