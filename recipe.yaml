@@ -1,9 +1,9 @@
 $engine: 3
 $onesync: legacy
 name: ESX Legacy
-version: 0.3.4
+version: 0.3.6
 author: ESX Framework
-description: A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. 
+description: The No.1 Framework For FiveM, fully pre-configured with jobs, housing, vehicles and more!
 
 tasks:
   # Download default CFX resources
