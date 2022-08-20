@@ -1,9 +1,9 @@
 $engine: 3
-$onesync: legacy
+$onesync: on
 name: ESX Legacy
-version: 0.3.6
+version: 0.3.7
 author: ESX Framework
-description: The No.1 Framework For FiveM, fully pre-configured with jobs, housing, vehicles and more!
+description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
 tasks:
   # Download default CFX resources
