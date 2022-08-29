@@ -93,6 +93,13 @@ tasks:
     ref: main
     dest: ./resources/[ox]/ox_fuel
 
+  - action: download_file
+    path: ./tmp/files/ox_doorlock.zip
+    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_doorlock.zip
+
   ## Patching configs: HUD
   - action: replace_string
     file: ./resources/[esx_addons]/esx_status/config.lua
