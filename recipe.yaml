@@ -1,9 +1,9 @@
 $engine: 3
-$onesync: legacy
+$onesync: on
 name: ESX Legacy
-version: 0.3.4
+version: 0.3.7
 author: ESX Framework
-description: A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. 
+description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
 tasks:
   # Download default CFX resources
@@ -12,7 +12,7 @@ tasks:
     ref: master
     subpath: resources
     dest: ./resources/[cfx-default]
-  
+
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
     src: https://github.com/esx-framework/ESX-recipes
@@ -26,11 +26,11 @@ tasks:
   - action: move_path
     src: ./tmp/recipe/loadingscreen
     dest: ./resources/loadingscreen
-  
+
   # Download basic resources and ESX dependencies
 
   - action: connect_database
-  
+
   - action: download_github
     src: https://github.com/Bob74/bob74_ipl
     ref: master
@@ -40,7 +40,7 @@ tasks:
     src: https://github.com/esx-framework/esx-legacy
     ref: main
     dest: ./tmp/esx
-    
+
   - action: move_path
     src: ./tmp/esx/[esx]
     dest: ./resources/[esx]
@@ -48,7 +48,7 @@ tasks:
   - action: move_path
     src: ./tmp/esx/[esx_addons]
     dest: ./resources/[esx_addons]
-    
+
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
@@ -71,7 +71,7 @@ tasks:
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
-    dest: ./resources
+    dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
 
   - action: download_file
@@ -88,15 +88,19 @@ tasks:
     dest: ./resources/[ox]
     src: ./tmp/files/ox_inventory.zip
 
-  - action: query_database
-    file: ./resources/[ox]/ox_inventory/setup/install.sql
-
   - action: download_github
     src: https://github.com/overextended/ox_fuel
     ref: main
     dest: ./resources/[ox]/ox_fuel
 
-  ## Patching configs: HUD 
+  - action: download_file
+    path: ./tmp/files/ox_doorlock.zip
+    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_doorlock.zip
+
+  ## Patching configs: HUD
   - action: replace_string
     file: ./resources/[esx_addons]/esx_status/config.lua
     search: 'Config.Display        = true'
@@ -106,7 +110,7 @@ tasks:
     file: ./resources/[hud]/ev-hud/config/config.js
     search: 'Config.useFramework = false // Set to true to use ESX, VRP or QBCore'
     replace: 'Config.useFramework = true // Set to true to use ESX, VRP or QBCore'
-  
+
   ## Patching configs: esx-radio
   - action: replace_string
     file: ./resources/[esx_addons]/esx-radio/config.lua
@@ -115,8 +119,8 @@ tasks:
 
   - action: replace_string
     mode: all_vars
-    file: 
-    - ./resources/loadingscreen/config.js
+    file:
+      - ./resources/loadingscreen/config.js
 
   ## Cleanup
   - action: remove_path
