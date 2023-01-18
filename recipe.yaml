@@ -94,11 +94,6 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_optionalneeds
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_cruisecontrol
-    ref: main
-    dest: ./tmp/addons/esx_cruisecontrol
-
   - action: waste_time # prevent github throttling
     seconds: 5
 
