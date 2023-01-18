@@ -88,6 +88,11 @@ tasks:
     dest: ./tmp/addons/esx_clotheshop
 
   - action: download_github
+    src: https://github.com/esx-framework/esx_optionalneeds
+    ref: main
+    dest: ./tmp/addons/esx_optionalneeds
+
+  - action: download_github
     src: https://github.com/esx-framework/esx_cruisecontrol
     ref: main
     dest: ./tmp/addons/esx_cruisecontrol
