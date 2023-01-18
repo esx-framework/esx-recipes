@@ -207,6 +207,11 @@ tasks:
     src: https://github.com/esx-framework/esx_status
     ref: main
     dest: ./tmp/addons/esx_status
+    
+  - action: download_github
+    src: https://github.com/esx-framework/esx_sit
+    ref: main
+    dest: ./tmp/addons/esx_sit
 
   - action: move_path
     src: ./tmp/core/[core]
