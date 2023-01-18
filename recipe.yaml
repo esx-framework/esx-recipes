@@ -77,10 +77,12 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_basicneeds
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_hud
-    ref: main
+  - action: download_file
+    path: ./tmp/files/esx_hud.zip
+    url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
+  - action: unzip
     dest: ./tmp/addons/esx_hud
+    src: ./tmp/files/esx_hud.zip
 
   - action: download_github
     src: https://github.com/esx-framework/esx_clotheshop
