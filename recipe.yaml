@@ -1,7 +1,7 @@
 $engine: 3
 $onesync: on
 name: ESX Legacy
-version: 0.3.7
+version: 0.3.8
 author: ESX Framework
 description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
@@ -22,6 +22,10 @@ tasks:
   - action: move_path
     src: ./tmp/recipe/server.cfg
     dest: ./server.cfg
+    
+  - action: move_path
+    src: ./tmp/recipe/myLogo.png
+    dest: ./myLogo.png
 
   - action: move_path
     src: ./tmp/recipe/loadingscreen
