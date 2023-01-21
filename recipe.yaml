@@ -1,7 +1,7 @@
 $engine: 3
 $onesync: on
 name: ESX Legacy
-version: 0.3.7
+version: 0.4.0
 author: ESX Framework
 description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
@@ -12,11 +12,11 @@ tasks:
     ref: master
     subpath: resources
     dest: ./resources/[cfx-default]
-  
+
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/esx-framework/ESX-recipes
-    ref: legacy
+    src: https://github.com/esx-framework/esx-recipes
+    ref: new-ox
     dest: ./tmp/recipe
 
   - action: move_path
@@ -26,7 +26,7 @@ tasks:
   - action: move_path
     src: ./tmp/recipe/loadingscreen
     dest: ./resources/loadingscreen
-  
+
   # Download basic resources and ESX dependencies
 
   - action: connect_database
@@ -65,7 +65,6 @@ tasks:
     src: https://github.com/esx-framework/esx_service
     ref: main
     dest: ./tmp/addons/esx_service
-
 
   - action: download_github
     src: https://github.com/esx-framework/esx_rpchat
@@ -209,7 +208,7 @@ tasks:
     src: https://github.com/esx-framework/esx_status
     ref: main
     dest: ./tmp/addons/esx_status
-    
+
   - action: download_github
     src: https://github.com/esx-framework/esx_sit
     ref: main
@@ -243,6 +242,31 @@ tasks:
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
 
+  - action: download_file
+    path: ./tmp/files/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_lib.zip
+
+  - action: download_file
+    path: ./tmp/files/ox_inventory.zip
+    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_inventory.zip
+
+  - action: download_github
+    src: https://github.com/overextended/ox_fuel
+    ref: main
+    dest: ./resources/[ox]/ox_fuel
+
+  - action: download_file
+    path: ./tmp/files/ox_doorlock.zip
+    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_doorlock.zip
 
   ## Patching configs: esx-radio
   - action: replace_string
