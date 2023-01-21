@@ -235,6 +235,9 @@ tasks:
   - action: query_database
     file: ./tmp/core/[SQL]/legacy.sql
 
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
   - action: download_file
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
@@ -261,12 +264,10 @@ tasks:
     ref: main
     dest: ./resources/[ox]/ox_fuel
 
-  - action: download_file
-    path: ./tmp/files/ox_target.zip
-    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_target.zip
-  - action: unzip
-    dest: ./resources/[ox]
-    src: ./tmp/files/ox_target.zip
+  - action: download_github
+    src: https://github.com/overextended/ox_target
+    ref: main
+    dest: ./resources/[ox]/ox_target
 
   - action: download_file
     path: ./tmp/files/ox_doorlock.zip
