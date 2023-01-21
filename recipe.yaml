@@ -262,6 +262,13 @@ tasks:
     dest: ./resources/[ox]/ox_fuel
 
   - action: download_file
+    path: ./tmp/files/ox_target.zip
+    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_target.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_target.zip
+
+  - action: download_file
     path: ./tmp/files/ox_doorlock.zip
     url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
   - action: unzip
