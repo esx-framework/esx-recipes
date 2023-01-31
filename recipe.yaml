@@ -81,7 +81,7 @@ tasks:
     path: ./tmp/files/esx_hud.zip
     url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
   - action: unzip
-    dest: ./tmp/addons/esx_hud
+    dest: ./tmp/addons
     src: ./tmp/files/esx_hud.zip
 
   - action: download_github
