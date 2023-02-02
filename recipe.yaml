@@ -1,7 +1,8 @@
 $engine: 3
+$minFxVersion: 5949
 $onesync: on
 name: ESX Legacy
-version: 0.3.7
+version: 1.9.1
 author: ESX Framework
 description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
@@ -15,8 +16,8 @@ tasks:
 
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/esx-framework/ESX-recipes
-    ref: legacy-ox
+    src: https://github.com/esx-framework/esx-recipes
+    ref: new-ox
     dest: ./tmp/recipe
 
   - action: move_path
@@ -37,16 +38,179 @@ tasks:
     dest: ./resources/[standalone]/bob74_ipl
 
   - action: download_github
-    src: https://github.com/esx-framework/esx-legacy
+    src: https://github.com/esx-framework/esx-core
     ref: main
-    dest: ./tmp/esx
+    dest: ./tmp/core
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addonaccount
+    ref: main
+    dest: ./tmp/addons/esx_addonaccount
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addoninventory
+    ref: main
+    dest: ./tmp/addons/esx_addoninventory
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_datastore
+    ref: main
+    dest: ./tmp/addons/esx_datastore
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_policejob
+    ref: main
+    dest: ./tmp/addons/esx_policejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_service
+    ref: main
+    dest: ./tmp/addons/esx_service
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_rpchat
+    ref: main
+    dest: ./tmp/addons/esx_rpchat
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_basicneeds
+    ref: main
+    dest: ./tmp/addons/esx_basicneeds
+
+  - action: download_file
+    path: ./tmp/files/esx_hud.zip
+    url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
+  - action: unzip
+    dest: ./tmp/addons
+    src: ./tmp/files/esx_hud.zip
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_clotheshop
+    ref: main
+    dest: ./tmp/addons/esx_clotheshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_optionalneeds
+    ref: main
+    dest: ./tmp/addons/esx_optionalneeds
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_property
+    ref: main
+    dest: ./tmp/addons/esx_property
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_dmvschool
+    ref: main
+    dest: ./tmp/addons/esx_dmvschool
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_barbershop
+    ref: main
+    dest: ./tmp/addons/esx_barbershop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_taxijob
+    ref: main
+    dest: ./tmp/addons/esx_taxijob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_billing
+    ref: main
+    dest: ./tmp/addons/esx_billing
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_drugs
+    ref: main
+    dest: ./tmp/addons/esx_drugs
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_garage
+    ref: main
+    dest: ./tmp/addons/esx_garage
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_vehicleshop
+    ref: main
+    dest: ./tmp/addons/esx_vehicleshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_joblisting
+    ref: main
+    dest: ./tmp/addons/esx_joblisting
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_banking
+    ref: main
+    dest: ./tmp/addons/esx_banking
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_lscustom
+    ref: main
+    dest: ./tmp/addons/esx_lscustom
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_society
+    ref: main
+    dest: ./tmp/addons/esx_society
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_license
+    ref: main
+    dest: ./tmp/addons/esx_license
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_accessories
+    ref: main
+    dest: ./tmp/addons/esx_accessories
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_jobs
+    ref: main
+    dest: ./tmp/addons/esx_jobs
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_ambulancejob
+    ref: main
+    dest: ./tmp/addons/esx_ambulancejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_mechanicjob
+    ref: main
+    dest: ./tmp/addons/esx_mechanicjob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_animations
+    ref: main
+    dest: ./tmp/addons/esx_animations
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_boat
+    ref: main
+    dest: ./tmp/addons/esx_boat
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_status
+    ref: main
+    dest: ./tmp/addons/esx_status
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_sit
+    ref: main
+    dest: ./tmp/addons/esx_sit
 
   - action: move_path
-    src: ./tmp/esx/[esx]
-    dest: ./resources/[esx]
+    src: ./tmp/core/[core]
+    dest: ./resources/[core]
 
   - action: move_path
-    src: ./tmp/esx/[esx_addons]
+    src: ./tmp/addons/
     dest: ./resources/[esx_addons]
 
   - action: download_github
@@ -55,17 +219,15 @@ tasks:
     dest: ./resources/[standalone]/pma-voice
 
   - action: download_github
-    src: https://github.com/EntityEvolution/ev-hud
-    ref: main
-    dest: ./resources/[hud]/ev-hud
-
-  - action: download_github
     src: https://github.com/Benzo00/esx-radio
     ref: main
     dest: ./resources/[esx_addons]/esx-radio
 
   - action: query_database
-    file: ./tmp/esx/[SQL]/legacy.sql
+    file: ./tmp/core/[SQL]/legacy.sql
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
 
   - action: download_file
     path: ./tmp/files/oxmysql.zip
@@ -93,23 +255,17 @@ tasks:
     ref: main
     dest: ./resources/[ox]/ox_fuel
 
+  - action: download_github
+    src: https://github.com/overextended/ox_target
+    ref: main
+    dest: ./resources/[ox]/ox_target
+
   - action: download_file
     path: ./tmp/files/ox_doorlock.zip
     url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
   - action: unzip
     dest: ./resources/[ox]
     src: ./tmp/files/ox_doorlock.zip
-
-  ## Patching configs: HUD
-  - action: replace_string
-    file: ./resources/[esx_addons]/esx_status/config.lua
-    search: 'Config.Display        = true'
-    replace: 'Config.Display        = false'
-
-  - action: replace_string
-    file: ./resources/[hud]/ev-hud/config/config.js
-    search: 'Config.useFramework = false // Set to true to use ESX, VRP or QBCore'
-    replace: 'Config.useFramework = true // Set to true to use ESX, VRP or QBCore'
 
   ## Patching configs: esx-radio
   - action: replace_string
@@ -126,10 +282,4 @@ tasks:
   - action: remove_path
     path: ./tmp
   - action: remove_path
-    path: ./resources/esx_example
-  - action: remove_path
-    path: ./resources/[esx_addons]/esx_whitelist
-  - action: remove_path
-    path: ./resources/[esx_addons]/esx_voice
-  - action: remove_path
-    path: ./resources/[esx_addons]/esx_phone
+    path: ./resources/[core]/esx_example
