@@ -2,7 +2,7 @@ $engine: 3
 $minFxVersion: 5949
 $onesync: on
 name: ESX Legacy
-version: 1.9.2
+version: 1.9.4
 author: ESX Framework
 description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
