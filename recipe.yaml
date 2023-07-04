@@ -24,10 +24,6 @@ tasks:
     src: ./tmp/recipe/server.cfg
     dest: ./server.cfg
 
-  - action: move_path
-    src: ./tmp/recipe/loadingscreen
-    dest: ./resources/loadingscreen
-
   # Download basic resources and ESX dependencies
 
   - action: connect_database
