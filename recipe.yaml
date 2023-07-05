@@ -243,17 +243,11 @@ tasks:
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
 
-
   ## Patching configs: esx-radio
   - action: replace_string
     file: ./resources/[esx_addons]/esx-radio/config.lua
     search: 'Key = "UP"'
     replace: 'Key = "F5"'
-
-  - action: replace_string
-    mode: all_vars
-    file:
-      - ./resources/loadingscreen/config.js
 
   ## Cleanup
   - action: remove_path
