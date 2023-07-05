@@ -24,8 +24,8 @@ tasks:
     dest: ./server.cfg
 
   - action: move_path
-    src: ./tmp/recipe/logo.png
-    dest: ./logo.png
+    src: ./tmp/recipe/esxLogo.png
+    dest: ./esxLogo.png
 
   # Download basic resources and ESX dependencies
 
