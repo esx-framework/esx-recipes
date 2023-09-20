@@ -14,7 +14,7 @@ tasks:
   
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/esx-framework/esx-recipes
+    src: https://github.com/BigSmoKe07/esx-recipes
     ref: legacy
     dest: ./tmp/recipe
 
