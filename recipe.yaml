@@ -1,7 +1,7 @@
 $engine: 3
 $onesync: on
 name: SandBox [ESX | WIP]
-author: AshVegeta
+author: BigSmoKe07
 description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
 tasks:
@@ -22,11 +22,11 @@ tasks:
     src: ./tmp/recipe/server.cfg
     dest: ./server.cfg
 
-  action: move_path
+  - action: move_path
     src: ./tmp/recipe/ox.cfg
     dest: ./ox.cfg
 
-  action: move_path
+  - action: move_path
     src: ./tmp/recipe/hud.cfg
     dest: ./hud.cfg
 
@@ -53,7 +53,8 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_addonaccount
 
-  - action: download_github
+  # Uncomment and correct the indentation if needed
+  #- action: download_github
   #  src: https://github.com/esx-framework/esx_addoninventory
   #  ref: main
   #  dest: ./tmp/addons/esx_addoninventory
@@ -73,6 +74,7 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_service
 
+  # Uncomment and correct the indentation if needed
   #- action: download_github
   #  src: https://github.com/esx-framework/esx_rpchat
   #  ref: main
@@ -304,4 +306,3 @@ tasks:
   ## Cleanup
   - action: remove_path
     path: ./tmp
-
