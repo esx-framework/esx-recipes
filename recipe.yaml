@@ -101,7 +101,7 @@ tasks:
   - action: download_github
     src: https://github.com/0xDEMXN/dx_hud
     ref: main
-    dest: ./tmp/addons
+    dest: ./tmp/addons/dx_hud
 
   - action: download_github
     src: https://github.com/esx-framework/esx_clotheshop
