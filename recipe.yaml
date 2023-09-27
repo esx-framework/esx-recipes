@@ -2,7 +2,6 @@ $engine: 3
 $minFxVersion: 5949
 $onesync: on
 name: ESX Legacy
-version: 1.9.4
 author: ESX Framework
 description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
 
@@ -219,11 +218,6 @@ tasks:
     ref: main
     dest: ./resources/[standalone]/pma-voice
 
-  - action: download_github
-    src: https://github.com/Benzo00/esx-radio
-    ref: main
-    dest: ./resources/[esx_addons]/esx-radio
-
   - action: query_database
     file: ./tmp/core/[SQL]/legacy.sql
 
@@ -267,12 +261,6 @@ tasks:
   - action: unzip
     dest: ./resources/[ox]
     src: ./tmp/files/ox_doorlock.zip
-
-  ## Patching configs: esx-radio
-  - action: replace_string
-    file: ./resources/[esx_addons]/esx-radio/config.lua
-    search: 'Key = "UP"'
-    replace: 'Key = "F5"'
     
   ## Cleanup
   - action: remove_path
