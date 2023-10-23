@@ -247,6 +247,23 @@ tasks:
     ref: main
     dest: ./resources/[standalone]/pma-voice
 
+  - action: download_file
+    path: ./tmp/mm_radio.zip
+    url: https://github.com/SOH69/mm_radio/releases/latest/download/mm_radio.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/mm_radio.zip
+  
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+  - action: download_file
+    path: ./tmp/Renewed-Banking.zip
+    url: https://github.com/Renewed-Scripts/Renewed-Banking/releases/latest/download/Renewed-Banking.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/Renewed-Banking.zip
+    
   #- action: download_github
   #  src: https://github.com/Benzo00/esx-radio
   #  ref: main
@@ -254,6 +271,9 @@ tasks:
 
   - action: query_database
     file: ./tmp/core/[SQL]/legacy.sql
+
+  - action: query_database
+    file: ./tmp/recipe/extra.sql
 
   - action: waste_time # prevent github throttling
     seconds: 5
