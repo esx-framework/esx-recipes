@@ -246,8 +246,8 @@ tasks:
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
     dest: ./resources/[standalone]/pma-voice
-
-  - action: download_file
+    
+ - action: download_file
     path: ./tmp/mm_radio.zip
     url: https://github.com/SOH69/mm_radio/releases/latest/download/mm_radio.zip
   - action: unzip
@@ -317,12 +317,11 @@ tasks:
     ref: main
     src: https://github.com/overextended/ox_fuel
 
-  ## Patching configs: esx-radio
+ ## Patching configs: esx-radio
   #- action: replace_string
   #  file: ./resources/[esx_addons]/esx-radio/config.lua
   #  search: 'Key = "UP"'
   #  replace: 'Key = "F5"'
-
   ## Cleanup
   - action: remove_path
     path: ./tmp
