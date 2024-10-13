@@ -13,6 +13,9 @@ tasks:
     subpath: resources
     dest: ./resources/[cfx-default]
 
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
+
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
     src: https://github.com/esx-framework/esx-recipes
