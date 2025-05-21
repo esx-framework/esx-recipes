@@ -7,7 +7,7 @@ description: The official recipe of the most popular FiveM RP framework, contain
 tasks:
   # Download default CFX resources
   - action: download_github
-    src: https://github.com/citizenfx/cfx-server-data
+    src: https://github.com/bitpredator/cfx-server-data
     ref: master
     subpath: resources
     dest: ./resources/[cfx-default]
@@ -65,7 +65,7 @@ tasks:
 
   - action: download_file
     path: ./tmp/files/oxmysql.zip
-    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+    url: https://github.com/communityox/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
