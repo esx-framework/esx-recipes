@@ -70,6 +70,22 @@ tasks:
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
 
+  # ox_lib (dependency of ox_inventory)
+  - action: download_file
+    path: ./tmp/files/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/files/ox_lib.zip
+
+  # ox_inventory
+  - action: download_file
+    path: ./tmp/files/ox_inventory.zip
+    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/files/ox_inventory.zip
+
   ## Cleanup
   - action: remove_path
     path: ./tmp
